@@ -1,4 +1,4 @@
-" vim-plug
+"vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'overcache/NeoSolarized'
@@ -6,6 +6,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'michal-h21/vim-zettel'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 " end vim-plug
