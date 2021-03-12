@@ -126,6 +126,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 # Custom configuration
 # --------------------
 
+# Persistent rehash
+zstyle ':completion:*' rehash true
+
 # Starship prompt (always at the end of file)
 eval "$(starship init zsh)"
 
