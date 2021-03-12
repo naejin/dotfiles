@@ -46,5 +46,5 @@ zmodule zsh-users/zsh-history-substring-search
 zmodule zdharma/fast-syntax-highlighting
 
 # Jump with z
-zmodule https://github.com/agkozak/zsh-z
+zmodule agkozak/zsh-z
 
