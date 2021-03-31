@@ -1,4 +1,4 @@
-""" vim-plug
+""" Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Eyecandy
@@ -24,13 +24,13 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/completion-nvim'
 
 call plug#end()
-""" end vim-plug
+""" end Plugins
 
 """ General settings
 syntax enable
 filetype plugin indent on
 set relativenumber
-""" End general settings
+""" End General settings
 
 """ NeoSolarized settings
 set termguicolors
@@ -63,7 +63,7 @@ let g:neosolarized_termBoldAsBright = 1
 
 colorscheme NeoSolarized
 set background=light
-""" End NeoSOlarized settings
+""" End NeoSolarized settings
 
 " vim-wiki settings
 let g:vimwiki_list = [{'path': '~/vimwiki/',
