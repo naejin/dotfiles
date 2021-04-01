@@ -3,6 +3,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Eyecandy
 Plug 'overcache/NeoSolarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " General tools
 Plug 'junegunn/fzf'
@@ -30,6 +32,9 @@ call plug#end()
 syntax enable
 filetype plugin indent on
 set relativenumber
+" have a fixed column for the diagnostics to appear in
+" this removes the jitter when warnings/errors flow in
+set signcolumn=yes
 """ End General settings
 
 """ NeoSolarized settings
@@ -65,6 +70,14 @@ colorscheme NeoSolarized
 set background=light
 """ End NeoSolarized settings
 
+""" vim-airline configuration
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing' ]
+let g:airline#extensions#whitespace#mixed_indent_algo = 2
+""" End vim-airline configuration
+
 " vim-wiki settings
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
@@ -81,7 +94,7 @@ set shortmess+=c
 
 " Configure LSP
 " https://github.com/neovim/nvim-lspconfig#rust_analyzer
-lua <<EOF
+:lua <<EOF
 
 -- nvim_lsp object
 local nvim_lsp = require'lspconfig'
@@ -91,9 +104,9 @@ local on_attach = function(client)
     require'completion'.on_attach(client)
 end
 
--- Enable rust_analyzer
+-- Enable lsp
 nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
-nvim_lsp.pyls.setup({ on_attach=on_attach})
+nvim_lsp.pyright.setup({ on_attach=on_attach })
 
 -- Enable diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -128,16 +141,13 @@ nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
 " Set updatetime for CursorHold
 " 300ms of no cursor movement to trigger CursorHold
 set updatetime=300
+
 " Show diagnostic popup on cursor hold
 autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 
 " Goto previous/next diagnostic warning/error
 nnoremap <silent> g[ <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> g] <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-
-" have a fixed column for the diagnostics to appear in
-" this removes the jitter when warnings/errors flow in
-" set signcolumn=yes
 
 " Enable type inlay hints
 autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
