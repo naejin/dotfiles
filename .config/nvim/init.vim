@@ -1,24 +1,44 @@
-""" Plugins
+" Vim plug
+" ------------------------------------------------------------------------------
+
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Eyecandy
+" Theme
+" ------------------------------------------------------------------------------
 Plug 'overcache/NeoSolarized'
+
+" Git
+" ------------------------------------------------------------------------------
+Plug 'tpope/vim-fugitive'
+
+" Status bar
+" ------------------------------------------------------------------------------
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" General tools
+" Finding and replacing
+" ------------------------------------------------------------------------------
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+
+" Editing
+" ------------------------------------------------------------------------------
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/vim-easy-align'
+
+" Tags
+" ------------------------------------------------------------------------------
 Plug 'ludovicchabant/vim-gutentags'
 
-" Tools for note taking following Zettelkasten methodology
+" Zettelkasten
+" ------------------------------------------------------------------------------
 Plug 'michal-h21/vim-zettel'
 Plug 'vimwiki/vimwiki'
 
+" LSP
+" ------------------------------------------------------------------------------
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
 " Extensions to built-in LSP, for example, providing type inlay hints
@@ -27,22 +47,33 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/completion-nvim'
 
 call plug#end()
-""" end Plugins
 
-""" General settings
+"  General config
+" ------------------------------------------------------------------------------
+
+" Enable term 24 bit colour
+set termguicolors
+
+" Syntax and indent
 syntax enable
 filetype plugin indent on
+
+" Line numbers
 set relativenumber
-" have a fixed column for the diagnostics to appear in
-" this removes the jitter when warnings/errors flow in
+
+" Fixed sign column to remove jitter
 set signcolumn=yes
+
+" Make it obvious where 80 characters is
+set textwidth=80
+
+" Spellcheck
 set spelllang=en,cjk
 nnoremap <silent> <F12> :set spell!<cr>
 inoremap <silent> <F12> <C-O>:set spell!<cr>
-""" End General settings
 
-""" NeoSolarized settings
-set termguicolors
+" NeoSolarized config
+" ------------------------------------------------------------------------------
 
 " Default value is "normal", Setting this option to "high" or "low" does use the
 " same Solarized palette but simply shifts some values up or down in order to
@@ -53,6 +84,8 @@ let g:neosolarized_contrast = "normal"
 " using ":set list" can be set to one of three levels depending on your needs.
 " Default value is "normal". Provide "high" and "low" options.
 let g:neosolarized_visibility = "normal"
+
+
 
 " I make vertSplitBar a transparent background color. If you like the origin
 " solarized vertSplitBar style more, set this value to 0.
@@ -72,17 +105,17 @@ let g:neosolarized_termBoldAsBright = 1
 
 colorscheme NeoSolarized
 set background=light
-""" End NeoSolarized settings
 
-""" vim-airline configuration
+" vim-airline config
+" ------------------------------------------------------------------------------
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing' ]
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
-""" End vim-airline configuration
 
-""" vim-easy-align
+" vim-easy-align
+" ------------------------------------------------------------------------------
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap gq <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
@@ -91,6 +124,9 @@ nmap gq <Plug>(EasyAlign)
 " vim-wiki settings
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" LSP config
+" ------------------------------------------------------------------------------
 
 " Set completeopt to have a better completion experience
 " :help completeopt
