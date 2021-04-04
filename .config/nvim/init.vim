@@ -71,7 +71,7 @@ set nofoldenable
 set signcolumn=yes
 
 " Make it obvious where 80 characters is
-set textwidth=80
+set colorcolumn=80
 
 " Don't display the current mode (Insert, Visual, Replace)
 " in the status line. This info is already shown in the
@@ -83,8 +83,6 @@ set ruler
 
 " Highlight current line
 set cursorline
-
-
 
 " Spellcheck
 set spelllang=en,cjk
