@@ -10,11 +10,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'junegunn/vim-easy-align'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Tools for note taking following Zettelkasten methodology
 Plug 'michal-h21/vim-zettel'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'vimwiki/vimwiki'
 
 " Collection of common configurations for the Nvim LSP client
@@ -34,6 +36,9 @@ set relativenumber
 " have a fixed column for the diagnostics to appear in
 " this removes the jitter when warnings/errors flow in
 set signcolumn=yes
+set spelllang=en,cjk
+nnoremap <silent> <F12> :set spell!<cr>
+inoremap <silent> <F12> <C-O>:set spell!<cr>
 """ End General settings
 
 """ NeoSolarized settings
@@ -76,6 +81,12 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing' ]
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
 """ End vim-airline configuration
+
+""" vim-easy-align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap gq <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap gq <Plug>(EasyAlign)
 
 " vim-wiki settings
 let g:vimwiki_list = [{'path': '~/vimwiki/',
