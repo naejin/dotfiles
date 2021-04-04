@@ -10,6 +10,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
+Plug 'ntpeters/vim-better-whitespace'
 
 " Tools for note taking following Zettelkasten methodology
 Plug 'michal-h21/vim-zettel'
