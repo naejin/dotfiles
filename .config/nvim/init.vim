@@ -59,13 +59,32 @@ syntax enable
 filetype plugin indent on
 
 " Line numbers
+set number
 set relativenumber
+
+" Use ``indent`` based folding
+set foldmethod=indent
+" Disable all folds on file open until `zc` or `zM` etc is used
+set nofoldenable
 
 " Fixed sign column to remove jitter
 set signcolumn=yes
 
 " Make it obvious where 80 characters is
 set textwidth=80
+
+" Don't display the current mode (Insert, Visual, Replace)
+" in the status line. This info is already shown in the
+" Airline status bar.
+set noshowmode
+
+" Show col and line position in the statusbar
+set ruler
+
+" Highlight current line
+set cursorline
+
+
 
 " Spellcheck
 set spelllang=en,cjk
@@ -109,6 +128,14 @@ set background=light
 " vim-airline config
 " ------------------------------------------------------------------------------
 let g:airline_theme='solarized'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline#extensions#default#layout = [
+        \ [ 'a', 'c' ],
+        \ [ 'x', 'error', 'warning' ]
+        \ ]
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing' ]
