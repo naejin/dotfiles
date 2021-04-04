@@ -142,7 +142,8 @@ xmap gq <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap gq <Plug>(EasyAlign)
 
-" vim-wiki settings
+" vim-wiki config
+" ------------------------------------------------------------------------------
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
