@@ -67,6 +67,11 @@ set foldmethod=indent
 " Disable all folds on file open until `zc` or `zM` etc is used
 set nofoldenable
 
+" Indent using two spaces.
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
+
 " Fixed sign column to remove jitter
 set signcolumn=yes
 
