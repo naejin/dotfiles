@@ -7,6 +7,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 " ------------------------------------------------------------------------------
 Plug 'overcache/NeoSolarized'
 
+" Session management
+" ------------------------------------------------------------------------------
+Plug 'tpope/vim-obsession'
+
 " Git
 " ------------------------------------------------------------------------------
 Plug 'tpope/vim-fugitive'
