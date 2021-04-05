@@ -126,10 +126,24 @@ bindkey -M vicmd 'j' history-substring-search-down
 # Custom configuration
 # --------------------
 
+#
+# General config
+#
+
 # Persistent rehash
 zstyle ':completion:*' rehash true
 
-# Starship prompt (always at the end of file)
-eval "$(starship init zsh)"
+#
+# fzf
+#
 
+# Enable fzf keybindings for Zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+# Enable fuzzy auto-completion for Zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+
+#
+# Starship prompt (always at the end of file)
+#
+eval "$(starship init zsh)"
 
