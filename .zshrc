@@ -130,6 +130,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 # General config
 #
 
+# Set default editor to neovim
+export EDITOR="nvim"
+
 # Persistent rehash
 zstyle ':completion:*' rehash true
 
