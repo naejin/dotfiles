@@ -18,7 +18,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Finding and replacing
 " ------------------------------------------------------------------------------
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Editing
