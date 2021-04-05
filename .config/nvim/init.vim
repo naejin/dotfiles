@@ -107,8 +107,6 @@ let g:neosolarized_contrast = "normal"
 " Default value is "normal". Provide "high" and "low" options.
 let g:neosolarized_visibility = "normal"
 
-
-
 " I make vertSplitBar a transparent background color. If you like the origin
 " solarized vertSplitBar style more, set this value to 0.
 let g:neosolarized_vertSplitBgTrans = 1
