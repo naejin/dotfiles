@@ -141,12 +141,16 @@ zstyle ':completion:*' rehash true
 #
 
 # Enable fzf keybindings for Zsh
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-# Enable fuzzy auto-completion for Zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  # Enable fuzzy auto-completion for Zsh
+  source /usr/share/doc/fzf/examples/completion.zsh
+fi
 
 #
 # Starship prompt (always at the end of file)
 #
 eval "$(starship init zsh)"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
