@@ -65,6 +65,18 @@ filetype plugin indent on
 " Line numbers
 set number
 set relativenumber
+nnoremap <silent> <F3> :call ToggleColumns()<cr>
+
+" Toggle columns for copy mode
+function! ToggleColumns()
+	set number!
+	set relativenumber!
+	if &signcolumn == "yes"
+		setlocal signcolumn=no
+	else
+		setlocal signcolumn=yes
+	endif
+endfunction
 
 " Use ``indent`` based folding
 set foldmethod=indent
