@@ -139,6 +139,7 @@ zstyle ':completion:*' rehash true
 #
 # fzf
 #
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Enable fzf keybindings for Zsh
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -152,5 +153,3 @@ fi
 #
 eval "$(starship init zsh)"
 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
