@@ -84,9 +84,9 @@ set foldmethod=indent
 set nofoldenable
 
 " Indent using two spaces.
-set softtabstop=2
-set tabstop=2
-set shiftwidth=2
+" set softtabstop=2
+" set tabstop=2
+" set shiftwidth=2
 
 " Fixed sign column to remove jitter
 set signcolumn=yes
