@@ -45,7 +45,7 @@ zmodule zsh-users/zsh-history-substring-search
 # ---
 
 # Fast syntax highlighting
-zmodule zdharma/fast-syntax-highlighting
+zmodule zdharma-continuum/fast-syntax-highlighting
 
 # Jump with z
 case "$OSTYPE" in
